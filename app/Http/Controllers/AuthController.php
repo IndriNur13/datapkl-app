@@ -43,6 +43,6 @@ class AuthController extends Controller
 
         ];
         User::create($dataStore);
-        echo "Data berhasil di simpan";
+        return redirect('/');
     }
 }
