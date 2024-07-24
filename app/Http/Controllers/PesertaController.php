@@ -12,7 +12,8 @@ class PesertaController extends Controller
     public function indexpeserta(Request $request)
     {
         $data = [
-            'sekolah'           => Sekolah::all()
+            'sekolah'           => Sekolah::all(),
+            'datapeserta'       => Peserta::with('sekolah')->get()
         ];
         return view('peserta.indexpeserta', $data);
     }
@@ -33,6 +34,12 @@ class PesertaController extends Controller
             'jurusan'               => $request->jurusan
         ];
         Peserta::create($dataStore);
+        return redirect('/indexpeserta');
+    }
+
+    public function hapus(Request $request, $id)
+    {
+        Peserta::where('id', $id)->delete();
         return redirect('/indexpeserta');
     }
 }

@@ -9,7 +9,10 @@ class SekolahController extends Controller
 {
     public function indexsekolah(Request $request)
     {
-        return view('sekolah.indexsekolah');
+        $data = [
+            'datasekolah'      => Sekolah::all()
+        ];
+        return view('sekolah.indexsekolah', $data);
     }
 
     public function daftarsekolah(Request $request)
@@ -27,6 +30,12 @@ class SekolahController extends Controller
             'namaperwakilan'        => $request->namaperwakilan
         ];
         Sekolah::create($dataStore);
+        return redirect('/indexsekolah');
+    }
+
+    public function hapus(Request $request, $id)
+    {
+        Sekolah::where('id', $id)->delete();
         return redirect('/indexsekolah');
     }
 }

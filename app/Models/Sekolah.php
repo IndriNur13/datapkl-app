@@ -21,6 +21,6 @@ class Sekolah extends Model
     //Relasi ke tabel peserta
     public function peserta()
     {
-        return $this->hasOne(Peserta::class, 'sekolah_id', 'id');
+        return $this->hasMany(Peserta::class, 'sekolah_id', 'id');
     }
 }

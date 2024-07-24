@@ -43,6 +43,20 @@ class AuthController extends Controller
 
         ];
         User::create($dataStore);
+        return redirect('/loginpage');
+    }
+
+    //homepage
+    public function homepage(Request $request)
+    {
+        return view('home');
+    }
+
+    //logout
+    public function logout(Request $request)
+    {
+        $request->session()->invalidate();
+        $request->session()->regenerate();
         return redirect('/');
     }
 }
