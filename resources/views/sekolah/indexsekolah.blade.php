@@ -68,6 +68,7 @@
                               <td>{{$item->alamatsekolah}}</td>
                               <td>{{$item->namaperwakilan}}</td>
                             <td>
+                            <a href="/sekolah/edit/{{$item->id}}">Edit</a>
                             <a href="/sekolah/hapus/{{$item->id}}">Hapus</a>
                             </td>
                             </tr>

@@ -19,11 +19,15 @@ use App\Http\Controllers\SekolahController;
 
 Route::get('/indexpeserta', [PesertaController::class, 'indexpeserta']);
 Route::post('/daftarpeserta', [PesertaController::class, 'daftarpeserta']);
+Route::get('/peserta/edit/{id}', [PesertaController::class, 'edit']);
+Route::post('/ubahpeserta/{id}', [PesertaController::class, 'ubah']);
 Route::get('/peserta/hapus/{id}', [PesertaController::class, 'hapus']);
 
 
 Route::get('/indexsekolah', [SekolahController::class, 'indexsekolah']);
 Route::post('/daftarsekolah', [SekolahController::class, 'daftarsekolah']);
+Route::get('/sekolah/edit/{id}', [SekolahController::class, 'edit']);
+Route::post('/ubahsekolah/{id}', [SekolahController::class, 'ubah']);
 Route::get('/sekolah/hapus/{id}', [SekolahController::class, 'hapus']);
 
 Route::get('/', [AuthController::class, 'homepage']);

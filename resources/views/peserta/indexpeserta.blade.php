@@ -63,7 +63,7 @@
                     <table class="table table-bordered" id="" width="100%" cellspacing="0">
                         <thead>
                             <tr>
-                                <th>#</th>
+                                <th>No</th>
                                 <th>Nama Peserta</th>
                                 <th>NIS</th>
                                 <th>Jurusan</th>
@@ -80,8 +80,10 @@
                               <td>{{$item->jurusan}}</td>
                               <td>{{optional ($item->sekolah)->namasekolah}}</td>
                             <td>
+                            <a href="/peserta/edit/{{$item->id}}">Edit</a>
                             <a href="/peserta/hapus/{{$item->id}}">Hapus</a>
                             </td>
+
                             </tr>
                           @endforeach
                         </tbody>
